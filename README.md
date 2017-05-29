@@ -39,3 +39,8 @@ $ python3 manage.py runserver
 >
 > $ python3 manage.py runserver &
 
+
+
+## Super User
+
+> ID : qwer
