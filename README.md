@@ -52,3 +52,22 @@ $ python3 manage.py runserver
 .pyc 파일 : 컴파일된 바이트 코드
 
 이런 파일은 정리해서 코드만 commit
+
+
+
+
+
+## URL
+
+### Home Page 
+
+LetsBe/LetsGo/templates/home.html
+
+
+
+### 분석 후 
+
+LetsBe/LetsGo/analy/templates/analy/analy_list.html
+
+...
+
