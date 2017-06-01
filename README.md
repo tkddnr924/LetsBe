@@ -52,9 +52,3 @@ $ python3 manage.py runserver
 .pyc 파일 : 컴파일된 바이트 코드
 
 이런 파일은 정리해서 코드만 commit
-
-
-### Test
-> git commit test
-> etsttsatse
-> teawtqw
