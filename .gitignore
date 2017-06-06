@@ -1,3 +1,9 @@
-*.iml
-*.xml
-*.pyc
+.DS_Store
+.idea/
+LetsGo/.DS_Store
+LetsGo/LetsGo/__pycache__/
+LetsGo/analy/.DS_Store
+LetsGo/analy/__pycache__/
+LetsGo/analy/migrations/__pycache__/
+LetsGo/analy/templates/.DS_Store
+LetsGo/static/.DS_Store
