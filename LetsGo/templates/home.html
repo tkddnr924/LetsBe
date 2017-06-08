@@ -3,6 +3,7 @@
 {% block title %}index.html{% endblock %}
 
 {% block content %}
+{% load staticfiles %}
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
@@ -41,10 +42,9 @@
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome To Our project!</div>
-                <div class="intro-heading">Test OpenSource Project</div>
+                <div class="intro-heading">Let's Go</div>
                 <div class="col-md-10 text-center ">
                   <div class="form-group text-center">
-
                     <input type="text" class="form-control" placeholder="nick name" id="name" required data-validation-required-message="Please enter your name.">
                     <p class="help-block text-danger"></p>
                   </div>
@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Services of our Project</h3>
                 </div>
             </div>
             <div class="row text-center">
@@ -73,7 +73,7 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">E-Commerce</h4>
+                    <h4 class="service-heading">JPEG Parse</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
                 <div class="col-md-4">
@@ -81,7 +81,7 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Responsive Design</h4>
+                    <h4 class="service-heading">Google Map API</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
                 <div class="col-md-4">
@@ -89,7 +89,7 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Web Security</h4>
+                    <h4 class="service-heading">EXIF</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
             </div>
@@ -107,15 +107,15 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Members of Team Let's Be</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <div class="team-member">{% load staticfiles %}
+                    <div class="team-member">
                         <img src="{% static 'img/inhan.jpg' %}" class="img-responsive img-circle" alt="">
                         <h4>최인한</h4>
-                        <p class="text-muted">Lead Designer</p>
+                        <p class="text-muted">2013244</p>
                         <ul class="list-inline social-buttons">
                             
                             
@@ -123,20 +123,20 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="team-member">{% load staticfiles %}
+                    <div class="team-member">
                         <img src="{% static 'img/taehwan.jpg' %}" class="img-responsive img-circle" alt="">
                         <h4>이태환</h4>
-                        <p class="text-muted">Lead Marketer</p>
+                        <p class="text-muted">2013244</p>
                         <ul class="list-inline social-buttons">
                             
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <div class="team-member">{% load staticfiles %}
+                    <div class="team-member">
                         <img src="{% static 'img/sangwook.jpg' %}" class="img-responsive img-circle" alt="">
                         <h4>안상욱</h4>
-                        <p class="text-muted">Lead Developer</p>
+                        <p class="text-muted">2015244011</p>
                         <ul class="list-inline social-buttons">
                             
                         </ul>
@@ -145,7 +145,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                    <p class="large text-muted">Open Source Project</p>
                 </div>
             </div>
         </div>
