@@ -24,4 +24,7 @@ urlpatterns = [
     # Example : /
     # Homepage URL
     url(r'^$', HomeView.as_view(), name='home'),
+
+    # Example : /result
+    url(r'^result/', include('analy.urls', namespace='analy')),
 ]

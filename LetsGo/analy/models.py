@@ -32,6 +32,9 @@ class User(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('analy:index', args=(self.id, ))
+
 
 class Photo(models.Model):
     user = models.ForeignKey(User)
