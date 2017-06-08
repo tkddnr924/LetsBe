@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.conf import settings
 
 from LetsGo.views import HomeView
 
@@ -27,4 +29,5 @@ urlpatterns = [
 
     # Example : /result
     url(r'^result/', include('analy.urls', namespace='analy')),
-]
+
+] + static(settings.MEDIA_URL, document_url=settings.MEDIA_ROOT)
