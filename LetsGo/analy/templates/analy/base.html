@@ -52,10 +52,11 @@
                     <li>
                         <a href="{% url 'analy:picture_list' object.id %}">Picture List</a>
                     </li>
-                    {% endif %}
+                    {% else %}
                     <li>
                         <a href="{% url 'analy:another_user' %}">Other User</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
