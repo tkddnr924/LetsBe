@@ -1,0 +1,23 @@
+{% extends 'analy/list_view_base.html' %}
+
+{% block title %} another_user_list.html {% endblock %}
+
+{% block content %}{% load staticfiles %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1> {{ object }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div id="map">
+            Hello
+        </div>
+    </div>
+    <div class="row">
+        <div id="image">
+            Image
+        </div>
+    </div>
+</div>
+{% endblock %}

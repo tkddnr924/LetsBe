@@ -34,7 +34,7 @@ class User(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('analy:index', args=(self.id, ))
+        return reverse('analy:another', args=(self.id, ))
 
 
 class Photo(models.Model):
