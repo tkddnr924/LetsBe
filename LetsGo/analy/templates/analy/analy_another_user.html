@@ -6,19 +6,29 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p class="lead">Other User</p>
-                <form action="{% url 'analy:another_user' %}" method="post">{% csrf_token %}
-                    <input type="text" name="search_word"/>
-                    <input type="submit" value="Search"/>
-                </form>
-                {% if my_list %}
-                {% for usr in my_list %}
-                <h2><a href="{{ usr.get_absolute_url }}">{{ usr }}</a></h2>
-                {% endfor %}
-                {% elif search_term %}
-                <b><i>Not Found! Search Word: {{ search_term }}</i></b>
-
-                {% endif %}
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Search another user</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form action="{% url 'analy:another_user' %}" method="post">{% csrf_token %}
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search_word"/>
+                                <span class="input-group-btn">
+                                    <input type="submit" value="Search" class="btn btn-info"/>
+                                </span>
+                            </div>
+                        </form>
+                        <br/>
+                        {% if my_list %}
+                        {% for usr in my_list %}
+                        <h2><a href="{{ usr.get_absolute_url }}">{{ usr }}</a></h2>
+                        {% endfor %}
+                        {% elif search_term %}
+                        <b><i>Not Found! Search Word: {{ search_term }}</i></b>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
