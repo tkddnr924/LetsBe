@@ -8,3 +8,5 @@ LetsGo/analy/migrations/__pycache__/
 LetsGo/analy/templates/.DS_Store
 LetsGo/static/.DS_Store
 LetsGo/LetsGo/__init__.pyc
+LetsGo/media/
+LetsGo/analy/core/__pycache__/

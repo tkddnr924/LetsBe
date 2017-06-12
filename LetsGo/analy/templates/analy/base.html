@@ -34,8 +34,10 @@
                 </button>
                 {% if object %}
                 <a class="navbar-brand" href="{% url 'analy:index' object.id %}">Sunmoon Univ</a>
-                {% endif %}
+                {% else %}
                 <a class="navbar-brand" href="{% url 'home' %}">Sunmoon Univ</a>
+                {% endif %}
+
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

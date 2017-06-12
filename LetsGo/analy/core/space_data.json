@@ -1,0 +1,7 @@
+{
+  "1" : "sRGB",
+  "2" : "Adobe RGB",
+  "65533" : "Wide Gamut RGB",
+  "65534" : "ICC Profile",
+  "65535" : "Uncalibrated"
+}

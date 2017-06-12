@@ -47,3 +47,24 @@ class Photo(models.Model):
     def __str__(self):
         return self.title
 
+
+class Exif(models.Model):
+    photo = models.ForeignKey(Photo)
+    make = models.CharField("Manufacturer", max_length=50)
+    camera_model = models.CharField("Model", max_length=50)
+    date_time = models.CharField("Date Time", max_length=50)
+    iso_speed = models.CharField("ISO Speed", max_length=50)
+    color = models.CharField("Color Space", max_length=50)
+    latitude = models.CharField("Latitude", max_length=50)
+    longitude = models.CharField("Longitude", max_length=50)
+    orientation = models.CharField("Direction of Rotation", max_length=50)
+    focal_length = models.CharField("Focus Length", max_length=50)
+    flash = models.CharField("Flash", max_length=50)
+
+    class Meta:
+        db_table = 'Exif_info'
+        ordering = ('-date_time', )
+
+
+    def __str__(self):
+        return self.make + "/" + self.latitude + '/' + self.longitude
