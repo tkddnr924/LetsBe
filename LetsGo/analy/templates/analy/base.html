@@ -32,19 +32,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Sunmoon Univ</a>
+                {% if object %}
+                <a class="navbar-brand" href="{% url 'analy:index' object.id %}">Sunmoon Univ</a>
+                {% endif %}
+                <a class="navbar-brand" href="{% url 'home' %}">Sunmoon Univ</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Result</a>
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    {% if object %}
+                    <li>
+                        <a href="{% url 'analy:index' object.id %}">Result</a>
                     </li>
                     <li>
-                        <a href="#">Picture List</a>
+                        <a href="{% url 'analy:picture_list' object.id %}">Picture List</a>
                     </li>
+                    {% endif %}
                     <li>
-                        <a href="{% url 'analy:other_user' %}">Other User</a>
+                        <a href="{% url 'analy:another_user' %}">Other User</a>
                     </li>
                 </ul>
             </div>

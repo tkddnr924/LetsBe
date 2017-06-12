@@ -8,11 +8,14 @@ class UserDV(DetailView):
     model = User
     template_name = 'analy/analy_result.html'
 
+class PictureDV(DetailView):
+    model = User
+    template_name = 'analy/analy_picture_list.html'
+
 
 class UserLV(ListView):
     model = User
-    template_name = 'analy/analy_other_user.html'
-
+    template_name = 'analy/analy_another_user.html'
 
 
 # GET JSON 필요
