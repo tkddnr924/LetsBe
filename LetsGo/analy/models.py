@@ -3,6 +3,7 @@ from django.core.urlresolvers import reverse
 
 from analy.fields import MyImageField
 
+import pdb
 # Create your models here.
 
 """
@@ -37,15 +38,21 @@ class User(models.Model):
 
 
 class Photo(models.Model):
+
+    def file_path(instance, filename):
+
+        return '/'.join(filter(None, (str(instance.user_id), filename)))
+
     user = models.ForeignKey(User)
     title = models.CharField("Title", max_length=100)
-    image = MyImageField(upload_to='photo/')
+    image = MyImageField(upload_to=file_path)
 
     class Meta:
         ordering = ['title']
 
     def __str__(self):
         return self.title
+
 
 
 class Exif(models.Model):
