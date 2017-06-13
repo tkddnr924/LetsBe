@@ -15,13 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.conf.urls.static import static
+from django.conf.urls.static import static, serve
 from django.conf import settings
 
 from LetsGo.views import HomeView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT, }),
 
     # Example : /
     # Homepage URL

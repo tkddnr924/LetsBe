@@ -15,7 +15,7 @@
     <!-- Custom CSS -->
     <link href="{% static 'analy/vendor/css/portfolio-item.css' %}" rel="stylesheet">
     <link href="{% static 'analy/css/my_css.css' %}" rel="stylesheet">
-
+    {% block extra_css %}{% endblock %}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -80,7 +80,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2O4P5PYYu0eeKK1rI0K2vpLKXIAxqX3c"></script>
 
     <!-- Custom JavaScript -->
-    <script src="{% static 'analy/js/my_map.js' %}"></script>
-
+    {% block extra_js %}{% endblock %}
 </body>
 </html>

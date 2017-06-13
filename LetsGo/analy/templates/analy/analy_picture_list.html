@@ -1,57 +1,54 @@
 {% extends 'analy/base.html' %}
-
+{% load staticfiles %}
 {% block title %} analy_picture_list {% endblock %}
+{% block extra_css %}
+
+{% endblock %}
 
 {% block content %}
-{% load staticfiles %}
     <div class="container">
-
-        <!-- Portfolio Item Heading -->
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Picture</h1>
+            <div class="page-header">
+                <h1>{{ object }}</h1>
             </div>
         </div>
-
         <div class="row">
-            <div class="col-md-8">
-                <img src=../../static/analy/vendor/img/a.jpg "http://placehold.it/750x500" alt="">
-            </div>
-
-            <div class="col-md-4">
-                <h3>Picture Exif Information</h3>
-                <p>abcdefghijklmnopqrstuvwxyz</p>
-            </div>
-            <div class="row">
-
-                <div class="col-lg-12">
-                    <h3 class="page-header">Other Picture</h3>
-                </div>
-
-                <div class="col-sm-3 col-xs-6">
-                    <a href="#">
-                        <img class="img-responsive portfolio-item" src="../../static/analy/vendor/img/b.jpg" alt="">
+            {% for photo in photo_data %}
+                <div class="col-md-3 portfolio-item">
+                    <a href="{{ photo.image.url }}">
+                        <img class="img-responsive" src="{{ photo.image.url }}" alt="">
                     </a>
                 </div>
-
-                <div class="col-sm-3 col-xs-6">
-                    <a href="#">
-                        <img class="img-responsive portfolio-item" src="../../static/analy/vendor/img/c.jpg" alt="">
-                    </a>
-                </div>
-
-                <div class="col-sm-3 col-xs-6">
-                    <a href="#">
-                        <img class="img-responsive portfolio-item" src="../../static/analy/vendor/img/d.jpg" alt="">
-                    </a>
-                </div>
-
-                <div class="col-sm-3 col-xs-6">
-                    <a href="#">
-                        <img class="img-responsive portfolio-item" src="../../static/analy/vendor/img/e.jpg" alt="">
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <ul class="pagination">
+                {% if photo_data.has_previous %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ photo_data.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                </li>
+                {% endif %}
+                <li class="page-item">
+                    {% for index in photo_data.paginator.page_range %}
+                    <a class="page-link" href="?page={{index}}">{{ index }}</a>
+                    {% endfor %}
+                </li>
+                {% if photo_data.has_next %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ photo_data.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </li>
+                {% endif %}
+            </ul>
         </div>
     </div>
+{% endblock %}
+
+{% block extra_js %}
+
 {% endblock %}

@@ -1,6 +1,8 @@
 from django.views.generic import ListView, DetailView
 from analy.models import User, Photo
 from analy.forms import SearchUserForm
+from django.core.paginator import EmptyPage, Paginator, PageNotAnInteger
+
 from django.db.models import Q
 from django.shortcuts import render, HttpResponse
 import json
@@ -8,13 +10,32 @@ from django.core.urlresolvers import reverse
 import pdb
 # Create your views here.
 
+
 class UserDV(DetailView):
     model = User
     template_name = 'analy/analy_result.html'
 
+
 class PictureDV(DetailView):
     model = User
     template_name = 'analy/analy_picture_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PictureDV, self).get_context_data(**kwargs)
+        photo_list = context['object'].photo_set.all()
+        paginator = Paginator(photo_list, 12)
+
+        page = self.request.GET.get('page')
+
+        try:
+            photo_data = paginator.page(page)
+        except PageNotAnInteger:
+            photo_data = paginator.page(1)
+        except EmptyPage:
+            photo_data = paginator.page(paginator.num_pages)
+
+        context['photo_data'] = photo_data
+        return context
 
 
 class UserLV(ListView):
@@ -34,7 +55,6 @@ class UserLV(ListView):
 
         return render(request, self.template_name, context)
 
-
     def get(self, request, *args, **kwargs):
         flag = request.path.split('/')[-1]
         print("flag is " + flag)
@@ -44,7 +64,6 @@ class UserLV(ListView):
             context = {}
             context['object'] = User.objects.filter(id=flag).first
             return render(request, 'analy/another_user_list.html', context)
-
 
 
 class AnotherUserDV(DetailView):

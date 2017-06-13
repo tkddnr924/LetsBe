@@ -1,7 +1,7 @@
 {% extends 'analy/base.html' %}
 
 {% block title %} analy_result.html {% endblock %}
-
+{% load staticfiles %}
 {% block content %}
 
     <!-- Page Content -->
@@ -68,4 +68,8 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'analy/js/my_map.js' %}"></script>
 {% endblock %}
