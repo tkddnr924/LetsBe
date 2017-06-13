@@ -1,0 +1,39 @@
+#other_map {
+    width: 100%;
+    height: 100%;
+    min-width: 200px;
+    min-height: 700px;
+}
+.controlUI{
+    border : 2px solid;
+    border-color: black;
+    border-radius : 3px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+    cursor : pointer;
+    margin-top : 20px;
+    margin-left : 10px;
+    text-align : center;
+    background-color :aliceblue;
+    height: 100%;
+    width: 92%;
+    min-height: 170px;
+    min-width: 170px;
+}
+
+.controlText{
+    color : rgb(25,25,25);
+    font-family : Roboto, Arial, sans-serif;
+    font-size : 16px;
+    line-height: 38px;
+    padding-left : 5px;
+    padding-right : 5px;
+}
+
+.control_img{
+    height: 150px;
+    min-height: 150px;
+    min-width: 150px;
+    width: 200px;
+    margin-top: 10px;
+    margin-right: 10px;
+}

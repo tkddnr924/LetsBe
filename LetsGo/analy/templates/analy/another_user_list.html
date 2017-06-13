@@ -1,91 +1,73 @@
 {% extends 'analy/list_view_base.html' %}
 
 {% block title %} another_user_list.html {% endblock %}
+{% load staticfiles %}
+{% block extra_css %}
+<link href="{% static 'analy/css/other_css.css' %}" rel="stylesheet">
+{% endblock %}
 
-{% block content %}{% load staticfiles %}
+{% block content %}
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h1> {{ object }}</h1>
+            <div class="page-header">
+                <h1> {{ object | upper }} </h1>
+            </div>
         </div>
     </div>
     <div class="row">
-
         <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        MAP
-                    </div>
-                    <div class="panel-body">
-                        <div id="my_map" class="my_map"></div>
-                    </div>
+            <div class="panel-heading">
+                MAP
+            </div>
+            <div class="panel-body">
+                <div id="other_map" class="other_map"></div>
+            </div>
         </div>
 
         <div class="panel panel-primary">
             <div class="panel-heading">
-                        Other User
+                Photos
             </div>
             <div class="panel-body">
-                 <div class="row">
-                     <div class="col-lg-12">
-                            <h1 class="">Other Picture</h1>
-                     </div>
-                 </div>
-                <div class="col-sm-3 col-xs-6">
-                    <a href="#">
-                        <img class="img-responsive portfolio-item" src="../../static/analy/vendor/img/b.jpg" >
-                    </a>
+                <div class="row">
+                    {% for photo in photo_data %}
+                        <div class="col-md-3 portfolio-item">
+                            <img class="img-responsive" src="{{ photo.image.url }}" alt="">
+                        </div>
+                    {% endfor %}
                 </div>
-                <div class="col-sm-3 col-xs-6">
-                    <a href="#">
-                        <img class="img-responsive portfolio-item" src="../../static/analy/vendor/img/b.jpg" >
-                    </a>
-                </div>
-                <div class="col-sm-3 col-xs-6">
-                    <a href="#">
-                        <img class="img-responsive portfolio-item" src="../../static/analy/vendor/img/b.jpg" >
-                    </a>
-                </div>
-                <div class="col-sm-3 col-xs-6">
-                    <a href="#">
-                        <img class="img-responsive portfolio-item" src="../../static/analy/vendor/img/b.jpg" >
-                    </a>
-                </div>
-                <div class="col-sm-3 col-xs-6">
-                    <a href="#">
-                        <img class="img-responsive portfolio-item" src="../../static/analy/vendor/img/b.jpg" >
-                    </a>
-                </div>
-                <div class="col-sm-3 col-xs-6">
-                    <a href="#">
-                        <img class="img-responsive portfolio-item" src="../../static/analy/vendor/img/b.jpg" >
-                    </a>
-                </div>
-                <div class="col-sm-3 col-xs-6">
-                    <a href="#">
-                        <img class="img-responsive portfolio-item" src="../../static/analy/vendor/img/b.jpg" >
-                    </a>
-                </div>
-                <div class="col-sm-3 col-xs-6">
-                    <a href="#">
-                        <img class="img-responsive portfolio-item" src="../../static/analy/vendor/img/b.jpg" >
-                    </a>
-                </div>
-
-                <nav aria-label="Page navigation example">
+                <div class="row" style="margin-left: 10px;">
                     <ul class="pagination">
-                          <li class="page-item"><a class="page-link" href="#">Before</a></li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item"><a class="page-link" href="#">4</a></li>
-                          <li class="page-item"><a class="page-link" href="#">5</a></li>
-                          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                     </ul>
-                </nav>
-             </div>
+                        {% if photo_data.has_previous %}
+                        <li class="page-item">
+                          <a class="page-link" href="?page={{ photo_data.previous_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                        </li>
+                        {% endif %}
+                        <li class="page-item">
+                            {% for index in photo_data.paginator.page_range %}
+                            <a class="page-link" href="?page={{index}}">{{ index }}</a>
+                            {% endfor %}
+                        </li>
+                        {% if photo_data.has_next %}
+                        <li class="page-item">
+                          <a class="page-link" href="?page={{ photo_data.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-
-
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'analy/js/other_map.js' %}"></script>
 {% endblock %}

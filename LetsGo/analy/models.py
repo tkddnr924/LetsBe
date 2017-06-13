@@ -53,6 +53,16 @@ class Photo(models.Model):
     def __str__(self):
         return self.title
 
+    def dic(self):
+        fields = [
+            'id', 'title', 'user_id'
+        ]
+        result = {}
+
+        for field in fields:
+            result[field] = self.__dict__[field]
+
+        return result
 
 
 class Exif(models.Model):

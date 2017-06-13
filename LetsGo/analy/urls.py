@@ -17,4 +17,7 @@ urlpatterns = [
 
     # Example : /result/data/photo_id
     url(r'^data/(?P<pk>)\d+', get_exif_json),
+
+    # Example : /result/data/photo/photo_id
+    url(r'^data/photo/(?P<pk>)\d+', get_photo_json),
 ]

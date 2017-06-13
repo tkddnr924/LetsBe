@@ -57,12 +57,25 @@ class UserLV(ListView):
 
     def get(self, request, *args, **kwargs):
         flag = request.path.split('/')[-1]
-        print("flag is " + flag)
+
         if flag == 'another_user':
             return super(UserLV, self).get(request, args, kwargs)
         else:
             context = {}
-            context['object'] = User.objects.filter(id=flag).first
+            context['object'] = User.objects.filter(id=flag).first()
+            photo_list = context['object'].photo_set.all()
+            paginator = Paginator(photo_list, 12)
+            page = self.request.GET.get('page')
+
+            try:
+                photo_data = paginator.page(page)
+            except PageNotAnInteger:
+                photo_data = paginator.page(1)
+            except EmptyPage:
+                photo_data = paginator.page(paginator.num_pages)
+
+            context['photo_data'] = photo_data
+
             return render(request, 'analy/another_user_list.html', context)
 
 
@@ -82,5 +95,13 @@ def get_exif_json(request, pk):
     for photo in photo_data:
         exif_data = photo.exif_set.all().first().dic()
         data.append(exif_data)
+
+    return HttpResponse(json.dumps(data), content_type='application/json')
+
+
+def get_photo_json(request, pk):
+    photo_id = request.path.split('/')[-1]
+    photo_data = Photo.objects.filter(id=photo_id).first()
+    data = photo_data.dic()
 
     return HttpResponse(json.dumps(data), content_type='application/json')

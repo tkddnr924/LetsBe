@@ -26,10 +26,11 @@ $.getJSON(exif_url, function(e_json){
     my_map = new google.maps.Map(document.getElementById('my_map'),{
         zoom: 17,
         center: {lat: 36.7989522, lng: 127.07493069999998 },
-        scrollwheel: true,
+        scrollwheel: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: true,
         scaleControl: true,
+        zoomControl: true,
     });
 
     gps_data.forEach(function(item, index, array){
