@@ -39,5 +39,4 @@ $.getJSON(exif_url, function(e_json){
         }));
     });
 
-
 });
