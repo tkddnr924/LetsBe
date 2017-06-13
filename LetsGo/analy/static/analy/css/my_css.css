@@ -180,5 +180,7 @@
 }
 
 .exif_string{
-
+    font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: large;
+    color: dodgerblue;
 }
