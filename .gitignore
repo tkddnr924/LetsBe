@@ -10,3 +10,4 @@ LetsGo/static/.DS_Store
 LetsGo/LetsGo/__init__.pyc
 LetsGo/media/
 LetsGo/analy/core/__pycache__/
+LetsGo/db.sqlite3
