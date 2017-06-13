@@ -1,60 +1,35 @@
 {% extends 'analy/list_view_base.html' %}
 
-{% block title %} another_user_list.html {% endblock %}
+{% block title %} analy_other_list {% endblock %}
 
 {% block content %}{% load staticfiles %}
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1> {{ object }}</h1>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Map
-            </div>
-            <div class="panel-body">
-            <div id="my_map" class="my_map"></div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div id="image"></div>
-    </div>
-
-    <div class="row">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Other User
-            </div>
-            <!-- Picture List -->
-            <div class="panel-body">
-                    <div class="col-lg-12">
-                    <h3 class="page-header">Picture list</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> Search another user</h3>
                     </div>
-                    <div class="col-sm-3 col-xs-6">
-                        {% for photo in object.photo_set.all %}
-                        <a href="#">
-                        <img class="img-responsive portfolio-item" src="{{  }}">
-                        </a>
-                        {% endfor%}
+                    <div class="panel-body">
+                        <form action="{% url 'analy:another_user' %}" method="post">{% csrf_token %}
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search_word"/>
+                                <span class="input-group-btn">
+                                    <input type="submit" value="Search" class="btn btn-info"/>
+                                </span>
+                            </div>
+                        </form>
+                        <br/>
+                        {% if my_list %}
+                        {% for usr in my_list %}
+                        <h2><a href="{{ usr.get_absolute_url }}">{{ usr }}</a></h2>
+                        {% endfor %}
+                        {% elif search_term %}
+                        <b><i>Not Found! Search Word: {{ search_term }}</i></b>
+                        {% endif %}
                     </div>
-                <!-- 버튼 누르는 곳 -->
-                     <nav aria-label="Page navigation">
-                         <ul class="pagination">
-                             <li class="page-item"><a class="page-link" href="#">Before</a></li>
-                             <li class="page-item"><a class="page-link" href="#">1</a></li>
-                             <li class="page-item"><a class="page-link" href="#">2</a></li>
-                             <li class="page-item"><a class="page-link" href="#">3</a></li>
-                             <li class="page-item"><a class="page-link" href="#">4</a></li>
-                             <li class="page-item"><a class="page-link" href="#">5</a></li>
-                             <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                         </ul>
-                     </nav>
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
