@@ -1,6 +1,6 @@
 {% extends 'analy/base.html' %}
 {% load staticfiles %}
-{% block title %} analy_picture_list {% endblock %}
+{% block title %} {{ object | upper}}'s Picture {% endblock %}
 {% block extra_css %}
 
 {% endblock %}
@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="page-header">
-                <h1>{{ object }}</h1>
+                <h1><strong>{{ object|upper }}</strong>  <small>{{ object.photo_set.all.count }} Photos</small></h1>
             </div>
         </div>
         <div class="row">
