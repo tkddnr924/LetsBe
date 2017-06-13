@@ -12,12 +12,12 @@
             <!-- Blog Post Content Column -->
             <div class="col-lg-12">
                 <div class="page-header">
-                    <h1><strong>{{ object | upper }}</strong></h1>
+                    <h1><strong>{{ object | upper }}</strong> <small>{{ object.photo_set.all.count }} Photos</small></h1>
                 </div>
                 <br/>
                 <!-- Preview Image -->
 
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
                         MAP
                     </div>

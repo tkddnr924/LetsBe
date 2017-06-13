@@ -79,7 +79,7 @@ class Exif(models.Model):
     def dic(self):
         fields = [
             'make', 'camera_model', 'date_time', 'iso_speed', 'color',
-            'latitude', 'longitude', 'orientation', 'focal_length', 'flash'
+            'latitude', 'longitude', 'orientation', 'focal_length', 'flash', 'id'
         ]
 
         result = {}
