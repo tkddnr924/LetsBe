@@ -75,3 +75,16 @@ class Exif(models.Model):
 
     def __str__(self):
         return self.make + "/" + self.latitude + '/' + self.longitude
+
+    def dic(self):
+        fields = [
+            'make', 'camera_model', 'date_time', 'iso_speed', 'color',
+            'latitude', 'longitude', 'orientation', 'focal_length', 'flash'
+        ]
+
+        result = {}
+
+        for field in fields:
+            result[field] = self.__dict__[field]
+
+        return result

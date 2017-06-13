@@ -1,8 +1,9 @@
 from django.views.generic import ListView, DetailView
-from analy.models import User
+from analy.models import User, Photo
 from analy.forms import SearchUserForm
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
+import json
 from django.core.urlresolvers import reverse
 import pdb
 # Create your views here.
@@ -52,3 +53,15 @@ class AnotherUserDV(DetailView):
 
 
 # GET JSON 필요
+
+def get_exif_json(request, pk):
+    """ /json/data/photo_id """
+    user_id = request.path.split('/')[-1]
+    user_data = User.objects.filter(id=user_id).first()
+    photo_data = user_data.photo_set.all()
+    data = []
+    for photo in photo_data:
+        exif_data = photo.exif_set.all().first().dic()
+        data.append(exif_data)
+
+    return HttpResponse(json.dumps(data), content_type='application/json')
