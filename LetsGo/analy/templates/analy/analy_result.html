@@ -11,7 +11,10 @@
 
             <!-- Blog Post Content Column -->
             <div class="col-lg-12">
-                <h1>Result page</h1><br/>
+                <div class="page-header">
+                    <h1><strong>{{ object | upper }}</strong></h1>
+                </div>
+                <br/>
                 <!-- Preview Image -->
 
                 <div class="panel panel-default">
@@ -21,12 +24,19 @@
                     <div class="panel-body">
                         <div id="my_map" class="my_map"></div>
                     </div>
-                    <div class="panel-footer">
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-header">
+                            <h1>Time Line</h1>
+                        </div>
                         <div style="display:inline-block;width:100%;overflow-y:auto;">
                             <ul class="timeline timeline-horizontal">
                                 {% for photo in object.photo_set.all %}
+                                {% if photo.exif_set %}
                                 <li class="timeline-item">
-                                    <div class="timeline-badge primary"><i class="glyphicon glyphicon-check"></i></div>
+                                    <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
                                     <div class="timeline-panel">
                                         <div class="timeline-heading">
                                             <h4 class="timeline-title">{{ photo.title }}</h4>
@@ -37,13 +47,22 @@
                                         </div>
                                     </div>
                                 </li>
+                                {% endif %}
                                 {% endfor %}
                             </ul>
 				        </div>
                     </div>
                 </div>
-                <div class="well">
-                    <h4>Exif Info:</h4>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="page-header">
+                            <h1> Exif Info </h1>
+                        </div>
+                        <div id="exif_info">
+                            Select Marker
+                        </div>
+                    </div>
                 </div>
 
             </div>
