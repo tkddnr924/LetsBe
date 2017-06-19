@@ -19,11 +19,11 @@ School Open Source Project
 
 Python 필요 모듈 : Django, Pillow
 
-> django -------------------
+> django 설치
 >
 > $ pip3 install django
 >
-> pillow --------------------
+> pillow 설치
 >
 > $ pip3 install pillow
 
@@ -44,30 +44,3 @@ $ python3 manage.py runserver
 ## Super User
 
 > ID : qwer
-
-
-
-## commit 하지 말 것 or 조심해서 commit 할 것
-
-.pyc 파일 : 컴파일된 바이트 코드
-
-이런 파일은 정리해서 코드만 commit
-
-
-
-
-
-## URL
-
-### Home Page 
-
-LetsBe/LetsGo/templates/home.html
-
-
-
-### 분석 후 
-
-LetsBe/LetsGo/analy/templates/analy/analy_list.html
-
-...
-
