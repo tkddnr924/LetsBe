@@ -9,6 +9,14 @@ School Open Source Project
 
 
 
+# 결과
+
+## HomePage
+
+
+
+## Result Page
+
 # 시작
 
 ## 필요한것
