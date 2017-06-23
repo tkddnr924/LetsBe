@@ -17,27 +17,27 @@ School Open Source Project
 
 ## Result Page
 
-![https://github.com/tkddnr924/LetsBe/blob/master/resultImage/resultpage.png]()
+![resultpage](https://github.com/tkddnr924/LetsBe/blob/master/resultImage/resultpage.png)
 
 
 
-![https://github.com/tkddnr924/LetsBe/blob/master/resultImage/resultpage2.png]()
+![resultpage2](https://github.com/tkddnr924/LetsBe/blob/master/resultImage/resultpage2.png)
 
 
 
-![https://github.com/tkddnr924/LetsBe/blob/master/resultImage/pictureListpage.png]()
+![picture list](https://github.com/tkddnr924/LetsBe/blob/master/resultImage/pictureListpage.png)
 
 
 
 ## Search Page
 
-![https://github.com/tkddnr924/LetsBe/blob/master/resultImage/searchpage.png]()
+![searchpage](https://github.com/tkddnr924/LetsBe/blob/master/resultImage/searchpage.png)
 
 
 
 ## Other User Page
 
-![https://github.com/tkddnr924/LetsBe/blob/master/resultImage/otherUserpage.png]()
+![otheruser](https://github.com/tkddnr924/LetsBe/blob/master/resultImage/otherUserpage.png)
 
 
 
