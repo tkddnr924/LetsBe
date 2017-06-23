@@ -13,7 +13,7 @@ School Open Source Project
 
 ## HomePage
 
-![https://github.com/tkddnr924/LetsBe/blob/master/resultImage/homepage.png]()
+![homepage](https://github.com/tkddnr924/LetsBe/blob/master/resultImage/homepage.png)
 
 ## Result Page
 
