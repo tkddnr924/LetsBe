@@ -13,9 +13,33 @@ School Open Source Project
 
 ## HomePage
 
-
+![https://github.com/tkddnr924/LetsBe/blob/master/resultImage/homepage.png]()
 
 ## Result Page
+
+![https://github.com/tkddnr924/LetsBe/blob/master/resultImage/resultpage.png]()
+
+
+
+![https://github.com/tkddnr924/LetsBe/blob/master/resultImage/resultpage2.png]()
+
+
+
+![https://github.com/tkddnr924/LetsBe/blob/master/resultImage/pictureListpage.png]()
+
+
+
+## Search Page
+
+![https://github.com/tkddnr924/LetsBe/blob/master/resultImage/searchpage.png]()
+
+
+
+## Other User Page
+
+![https://github.com/tkddnr924/LetsBe/blob/master/resultImage/otherUserpage.png]()
+
+
 
 # 시작
 
